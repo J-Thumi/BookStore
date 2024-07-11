@@ -29,7 +29,7 @@ axios.get('http://localhost:5555/books/')
     },[])
 
   return (
-    <div className='p-4'>
+    <div className='p-4 bg-gray-300'>
         <div className="flex justify-between items-center">
             <h1 className="text-3xl my-8">Books List</h1>
             <Link to='/books/create'>
@@ -43,27 +43,38 @@ axios.get('http://localhost:5555/books/')
             border-spacing-2'>
                 <thead>
                     <tr>
+                        
                         <th className="border border-slate-600 rounded-md">No</th>
+                        {/* <th className="border border-slate-600 rounded-md">image</th> */}
                         <th className="border border-slate-600 rounded-md">Title</th>
                         <th className="border border-slate-600 rounded-md max-md:hidden">Author</th>
-                        <th className="border border-slate-600 rounded-md max-md:hidden">Publish Year</th>
+                        <th className="border border-slate-600 rounded-md max-md:hidden">Short Description</th>
+                        <th className="border border-slate-600 rounded-md max-md:hidden">isbn</th>
                         <th className="border border-slate-600 rounded-md">Operations</th>
                     </tr>
                 </thead>
 <tbody>
     {books.map((book,index)=>(
 <tr key={book._id} className="h-8" >
+    
     <td className="border border-slate-700 rounded-md text-center">
         {index+1}
     </td>
+    {/* <td >
+    <img src={book.
+thumbnailUrl} />
+    </td> */}
     <td className="border border-slate-700 rounded-md text-center">
         {book.title}
     </td>
     <td className="border border-slate-700 rounded-md text-center max-md:hidden">
-        {book.author}
+        {book.authors} <br />
     </td>
     <td className="border border-slate-700 rounded-md text-center max-md:hidden">
-        {book.year}
+        {book.shortDescription} <br />
+    </td>
+    <td className="border border-slate-700 rounded-md text-center max-md:hidden">
+        {book.isbn}
     </td>
     <td className="border border-slate-700 rounded-md text-center">
         <div className="flex justify-center gap-x-4">

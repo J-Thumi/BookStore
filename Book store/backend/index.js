@@ -6,6 +6,7 @@ import { ObjectId } from 'mongodb';
 import cors from 'cors'
 
 const app=express();
+// app.use(express.json())
 app.use(cors())
 // app.use(cors({
 //     origin:"http://localhost:5173/books",
@@ -34,7 +35,7 @@ app.get('/books',(req,res)=>{
     let Books=[]
     db.collection('store')
     .find()
-    .sort({author:1})
+    .sort({title:1})
     .forEach((book)=>{
      Books.push(book)
     })
@@ -69,7 +70,8 @@ app.get('/books/:id',(req,res)=>{
      res.status(200).json(result)
  })
  .catch((err)=>{
-     res.status(500).json({error:"cannot add the book"})
+    //  res.status(500).json({error:"cannot add the book"})
+     res.status(500).json(err)
  })
  })
  
