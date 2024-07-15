@@ -1,0 +1,5 @@
+npm init -y
+npm install mongoose express cors nodemon 
+
+"start":"node index.js", "dev":"nodemon index.js"
+Add the above code snippet in the package.json file under the scripts object to enable running the file index.js using npm start and npm run dev

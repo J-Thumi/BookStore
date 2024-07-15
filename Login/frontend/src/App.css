@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4070f4;
+  }
+
+.wrapper{
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.wrapper h2{
+  position: relative;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+.wrapper h2::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 28px;
+  border-radius: 12px;
+  background: #4070f4;
+}
+.wrapper form{
+  margin-top: 30px;
+}
+.wrapper form .input-box{
+  height: 52px;
+  margin: 18px 0;
+}
+form .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.input-box input:focus,
+.input-box input:valid{
+  border-color: #4070f4;
+}
+form .policy{
+  display: flex;
+  align-items: center;
+}
+form h3{
+  color: #707070;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.input-box.button input{
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  background: #4070f4;
+  cursor: pointer;
+}
+.input-box.button input:hover{
+  background: #0e4bf1;
+}
+form .text h3{
+ color: #333;
+ width: 100%;
+ text-align: center;
+}
+form .text h3 a{
+  color: #4070f4;
+  text-decoration: none;
+}
+form .text h3 a:hover{
+  text-decoration: underline;
+}
+
+
+
+
+/* Login */
+.borderLine {
+    position: absolute;
+    top: 0;
+    inset: 0;
+  }
+  
+  .borderLine::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+      0deg,
+      transparent,
+      transparent,
+      #ff4545,
+      #ff4545,
+      #ff4545
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+  }
+  .borderLine::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+      0deg,
+      transparent,
+      transparent,
+      #ff4545,
+      #ff4545,
+      #ff4545
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+  }
+  .box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+      0deg,
+      transparent,
+      transparent,
+      #45f3ff,
+      #45f3ff,
+      #45f3ff
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+  }
+  .box::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+      0deg,
+      transparent,
+      transparent,
+      #45f3ff,
+      #45f3ff,
+      #45f3ff
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: 3s;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .box {
+    position: relative;
+    background-color: grey;
+    width: 380px;
+    height: 420px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .box form {
+    position: absolute;
+    inset: 4px;
+    background: rgb(33, 33, 33);
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  .box form h2 {
+    color: skyblue;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+  .box form .inputBox {
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+  }
+  .box form .inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: rgb(78, 5, 5);
+    background: transparent;
+    font-size: 1em;
+    transition: 0.5s;
+    z-index: 10;
+  }
+  .box form .inputBox input:valid ~ span,
+  .box form .inputBox input:focus ~ span {
+    color: white;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+  }
+  .box form .inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  .box form .inputBox input:valid ~ i,
+  .box form .inputBox input:focus ~ i {
+    height: 44px;
+  }
+  .box form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    color: rgb(180, 180, 180);
+    pointer-events: none;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+  }
+  .box form .links {
+    display: flex;
+    justify-content: space-between;
+  }
+  .box form .links a {
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: skyblue;
+    text-decoration: none;
+  }
+  .box form .links a:hover,
+  .box form .links a:nth-child(2) {
+    color: white;
+  }
+  
+  .box form input[type="button"] {
+    background: rgb(163, 31, 31);
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 700;
+    width: 100px;
+    margin: 30px 30%;
+    padding: 9px 25px;
+  }
+  .box form input[type="button"]:active {
+    opacity: 0.8;
+  }
+  
