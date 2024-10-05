@@ -1,0 +1,59 @@
+Redis (Remote Dictionary Server) is an open-source, in-memory data structure store used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Here are some key features and uses of Redis:
+
+Key Features of Redis
+In-Memory Storage: Redis stores data in memory, which allows for very fast read and write operations.
+Persistence: Though it is in-memory, Redis supports persistent storage. Data can be periodically saved to disk, or you can log each write operation to disk.
+Data Structures: Redis supports a variety of data structures including strings, lists, sets, sorted sets, hashes, bitmaps, hyperloglogs, and geospatial indexes.
+Replication: Redis supports master-slave replication, allowing data to be copied to multiple replica servers.
+Pub/Sub: Redis has a built-in publish/subscribe messaging paradigm, useful for implementing real-time messaging or notifications.
+Transactions: Redis supports transactions, allowing multiple commands to be executed in a single atomic operation.
+Lua Scripting: You can write and execute Lua scripts in Redis, enabling complex operations to be performed atomically.
+Cluster: Redis can be distributed in a cluster, allowing data to be automatically partitioned across multiple Redis nodes.
+High Availability: Redis Sentinel provides high availability and monitoring, allowing automatic failover in case of server failure.
+Common Use Cases
+Caching: Due to its high speed, Redis is often used as a caching layer in front of a primary database to improve performance.
+Session Store: In web applications, Redis is frequently used to store session data.
+Real-Time Analytics: Redis can handle real-time analytics due to its fast data access.
+Message Broker: Redis's Pub/Sub capabilities make it suitable for use as a lightweight message broker.
+Leaderboards/Counting: The sorted set data structure in Redis is ideal for leaderboards and other types of counting or ranking tasks.
+Geospatial Data: Redis supports storing and querying geospatial data, making it useful for location-based applications.
+
+
+A proxy server acts as an intermediary between a client and a destination server, facilitating or controlling the communication between them. Here’s how it works:
+
+How Proxy Servers Work
+Client Request: When a client (such as a web browser) wants to access a resource on a server (like a webpage), it sends a request to the proxy server instead of directly to the destination server.
+Proxy Processing: The proxy server processes the client's request, which might involve modifying the request, caching the request for future use, or applying security policies.
+Forwarding the Request: The proxy server then forwards the request to the destination server.
+Server Response: The destination server processes the request and sends the response back to the proxy server.
+Response to Client: The proxy server sends the response from the destination server back to the client.
+Types of Proxy Servers
+Forward Proxy:
+
+Usage: Typically used to facilitate client access to the internet.
+Example: A company might use a forward proxy to filter and monitor employee internet usage.
+Reverse Proxy:
+
+Usage: Placed in front of web servers to distribute client requests and optimize server performance.
+Example: Load balancers that distribute incoming traffic across multiple servers.
+Transparent Proxy:
+
+Usage: Intercepts client requests without any client configuration.
+Example: Caching proxies that reduce bandwidth usage by caching frequently accessed resources.
+Anonymous Proxy:
+
+Usage: Hides the client's IP address and identity.
+Example: Used to browse the internet anonymously and bypass geo-restrictions.
+High Anonymity Proxy:
+
+Usage: Completely hides the client's IP address and makes it appear as though the request originated from the proxy server.
+Example: Often used to provide a high level of anonymity for sensitive transactions.
+Benefits of Using Proxy Servers
+Privacy and Anonymity: Proxy servers can hide the client's IP address, providing a layer of privacy and anonymity.
+Security: They can filter out malicious content and block access to harmful websites.
+Content Filtering: Used by organizations to restrict access to certain types of content.
+Load Balancing: Distribute incoming traffic across multiple servers to optimize performance and prevent server overload.
+Caching: Store copies of frequently accessed resources to reduce bandwidth usage and improve load times.
+
+GETTING STARTED
+npm i express-session connect-redis redis

@@ -7,15 +7,22 @@ const Sign = () => {
   const [name,setName]=useState()
   const[email, setEmail]=useState()
   const[password, setPassword]=useState()
+  const[confirmPassword,setConfirmPassword]=useState()
+
 const navigate=useNavigate()
 
 
   const handleSubmit=(e)=>{
     e.preventDefault()
-   axios.post('http://localhost:3000/sign',{name,email,password})
+   axios.post('http://localhost:3000/sign',{name,email,password,confirmPassword})
    .then((result=>{
-    console.log(result)
-    navigate('/login')
+    console.log(result.data)
+    if(result.data==='user added successfully'){
+      navigate('/login')
+    }
+    else{
+      alert('password confirm do not match ')
+    }
    }))
    .catch((err)=>{
     console.log(err)
@@ -38,10 +45,14 @@ const navigate=useNavigate()
       </div>
       <div className="input-box">
         <input type="password" placeholder="Create password" 
-        onChange={(e)=>setPassword(e.target.value)}required/>
+        onChange={(e)=>setPassword(e.target.value)
+
+        }required/>
       </div>
       <div className="input-box">
-        <input type="password" placeholder="Confirm password" required/>
+        <input type="password" placeholder="Confirm password" 
+        onChange={(e)=>setConfirmPassword(e.target.value)}
+        required/>
       </div>
       <div className="policy">
         <input type="checkbox"/>

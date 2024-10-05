@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+
+
 const Login = () => {
 
     const[name,setName]=useState()
@@ -13,9 +15,14 @@ const Login = () => {
         axios.post("http://localhost:3000/login",{name,password})
         .then(result=>{console.log(result)
             if(result.data==="success"){
-                navigate('/')
+                navigate('/home')
             }
-            
+            else if(result.data==="incorrect password"){
+                alert('incorrect password')
+            }
+            else{
+              alert('No sush user')
+            }
         })
         .catch(err=>{
             console.log(err)
@@ -23,7 +30,7 @@ const Login = () => {
     }
   return (
     <div className="wrapper">
-    <h2>Registration</h2>
+    <h2>Login</h2>
     <form action="#" onSubmit={handleSubmit}>
       <div className="input-box">
         <input type="text" placeholder="Enter your name" 
